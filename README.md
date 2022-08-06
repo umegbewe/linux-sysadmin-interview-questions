@@ -56,59 +56,139 @@ A collection of linux sysadmin/devops interview questions. Feel free to contribu
 #### [[⬆]](#toc) <a name='simple'>Simple Linux Questions:</a>
 
 * What is the name and the UID of the administrator user?
+``
+Uid is 0, name is root
+``
 * How to list all files, including hidden ones, in a directory?
+``
+ls -a
+``
 * What is the Unix/Linux command to remove a directory and its contents?
+``
+rm -r
+``
 * Which command will show you free/used memory? Does free memory exist on Linux?
+``
+free, yes it exists
+``
 * How to search for the string "my konfu is the best" in files of a directory recursively?
+``
+grep -R "my konfu is the best" <directory name>
+``
 * How to connect to a remote server or what is SSH?
+``
+You can connect to a remote server with SSH or telnet 
+``
 * How to get all environment variables and how can you use them?
+``
+env
+``
 * I get "command not found" when I run ```ifconfig -a```. What can be wrong?
+```
+ifconfig command has been depreciated, replace with ip
+command not in PATH
+not allowed to run ifconfig command
+```
 * What happens if I type TAB-TAB?
 * What command will show the available disk space on the Unix/Linux system?
+``
+df -h
+``
 * What commands do you know that can be used to check DNS records?
+``
+nslookup, dig
+``
 * What Unix/Linux commands will alter a files ownership, files permissions?
+``
+chown, chmod
+``
 * What does ```chmod +x FILENAME``` do?
+``
+makes the file executable
+``
 * What does the permission 0750 on a file mean?
 * What does the permission 0750 on a directory mean?
 * How to add a new system user without login permissions?
+``
+set shell to /bin/false
+``
 * How to add/remove a group from a user?
+``
+gpasswd <user> <groupname>
 * What is a bash alias?
+``
+command uses to replace a command for another string
+``
 * How do you set the mail address of the root/a user?
 * What does CTRL-c do?
+``
+calls exit() on a process
+``
 * What does CTRL-d do?
+
 * What does CTRL-z do?
+``
+run process in background
+``
 * What is in /etc/services?
+```
+provides mapping between ports and user friendly names for internet services e.g http 80 tcp
+```
 * How to redirect STDOUT and STDERR in bash? (> /dev/null 2>&1)
+```
 * What is the difference between UNIX and Linux.
+Linux is open source, Unix is proprietary
+```
 * What is the difference between Telnet and SSH?
+``
+Telnet is unencrypted and SSH is encrypted
+``
 * Explain the three load averages and what do they indicate. What command can be used to view the load averages?
+``
+last 1 minute, 5 minutes, 5 minutes
+``
 * Can you name a lower-case letter that is not a valid option for GNU ```ls```?
+``
+-e
+``
 * What is a Linux kernel module?
+```
+The modular nature of the linux kernel helps us avoid compiling the whole kernel when adding a piece of code, a module in like a plug and play which can be loaded and unloaded upon demand. e.g device drivers.
+```
 * Walk me through the steps in booting into single user mode to troubleshoot a problem.
 * Walk me through the steps you'd take to troubleshoot a 404 error on a web application you administer.
+```
+Check for files being requested exists and if permissions are ok
+
+```
+
 * What is ICMP protocol? Why do you need to use?
+
+```
+Internet control message protocol used to send operating and error messages between network devices. example of tools are ping, traceroute
+```
 
 #### [[⬆]](#toc) <a name='medium'>Medium Linux Questions:</a>
 
 * What do the following commands do and how would you use them?
- * ```tee```
- * ```awk```
- * ```tr```
- * ```cut```
- * ```tac```
- * ```curl```
- * ```wget```
- * ```watch```
- * ```head```
- * ```tail```
- * ```less```
- * ```cat```
- * ```touch```
+ * ```tee``` read from standard input and write to standard output and files
+ * ```awk``` pattern scanning
+ * ```tr```  translate or truncate characters
+ * ```cut``` remove sections of lines in a file
+ * ```tac``` 
+ * ```curl``` commandline tool for transferring data from a client to a server
+ * ```wget``` download files from the web
+ * ```watch``` run command every 2 seconds displaying output and errors
+ * ```head``` output first part of files
+ * ```tail``` output last part of files
+ * ```less``` backward movement out file
+ * ```cat``` output file contents
+ * ```touch``` create empty file
  * ```sar```
- * ```netstat```
- * ```tcpdump```
- * ```lsof```
-* What does an ```&``` after a command do?
+ * ```netstat``` 
+ * ```tcpdump``` dump packet information of a network interface
+ * ```lsof``` list open files
+* What does an ```&``` after a command do? ``sends to background``
 * What does ```& disown``` after a command do?
 * What is a packet filter and how does it work?
 * What is Virtual Memory?
